@@ -16,7 +16,7 @@ public class EmpleadosController {
     @Autowired
     EmpleadosService empleadosService;
 
-    @PostMapping(value = "/")
+    @PostMapping(value = "/save")
     public ResponseEntity<Empleados> save(@RequestBody Empleados empleado) {
         Empleados obj = empleadosService.crearEmpleado(empleado);
         if (obj != null) {
