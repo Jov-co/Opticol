@@ -20,7 +20,7 @@ public class Empleados {
     private String especialidad;
     private String telefono;
     private String correo;
-    private ArrayList<Horario> horarios;
+    //private ArrayList<Horario> horarios;
 
 
 

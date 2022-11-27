@@ -1,6 +1,11 @@
 package com.MinTic.Opticol.Services;
 
+import com.MinTic.Opticol.Entities.Pacientes;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public interface PacienteService  {

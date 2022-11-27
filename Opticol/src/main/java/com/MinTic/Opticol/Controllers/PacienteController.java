@@ -1,9 +1,22 @@
 package com.MinTic.Opticol.Controllers;
-    
+
+import com.MinTic.Opticol.Entities.Pacientes;
+import com.MinTic.Opticol.Services.PacienteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class PacienteController {
-     //Metodos
+
+    @Autowired
+    private PacienteService pacienteService;
+
+    //Metodos
 
     //CRUD Pacientes
 
