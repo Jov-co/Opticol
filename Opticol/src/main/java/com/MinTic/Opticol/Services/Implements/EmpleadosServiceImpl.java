@@ -4,10 +4,8 @@ import com.MinTic.Opticol.Entities.Empleados;
 import com.MinTic.Opticol.Repository.EmpleadosRepository;
 import com.MinTic.Opticol.Services.EmpleadosService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -57,33 +55,6 @@ public class EmpleadosServiceImpl implements EmpleadosService {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(empleado);
-
-    }
-
-    @Service
-    public static class CitaServicesImpl implements CitaService {
-
-        //instanciar repository
-
-        @Autowired
-        private CitaRepository citaRepository;
-
-        //Listar todas las citas
-        @Override
-        @Transactional(readOnly =true)
-        public List<Citas> listar() {
-            return citaRepository.findAll();
-        }
-        //Agregar cita
-
-        @Override
-        public ResponseEntity<Object> guardar(Citas cita, HttpHeaders headers) {
-            if(cita.getId()!=null) {
-                return ResponseEntity.badRequest().build();
-            }
-            Citas result= citaRepository.save(cita);
-            return ResponseEntity.ok(result);
-        }
 
     }
 }
