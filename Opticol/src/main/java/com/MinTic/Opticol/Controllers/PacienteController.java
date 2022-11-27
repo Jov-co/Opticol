@@ -1,8 +1,20 @@
 package com.MinTic.Opticol.Controllers;
-    
+
+import com.MinTic.Opticol.Entities.Pacientes;
+import com.MinTic.Opticol.Services.PacienteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class PacienteController {
+
+    @Autowired
+    PacienteService pacienteService;
      //Metodos
 
     //CRUD Pacientes
@@ -14,8 +26,8 @@ public class PacienteController {
     }
     //Agregar un Paciente
     @PostMapping("/pacientes")
-    public ResponseEntity<Object> create (@RequestBody Pacientes paciente, @RequestHeader HttpHeaders headers){
-         return pacienteService.guardar(paciente,headers);
+    public ResponseEntity<Object> create (@RequestBody Pacientes paciente){
+         return pacienteService.guardar(paciente);
     }
     //Buscar Paciente por id
     @GetMapping("/pacientes/{id}")

@@ -2,7 +2,6 @@ package com.MinTic.Opticol.Entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -20,7 +19,7 @@ public class Empleados {
     private String especialidad;
     private String telefono;
     private String correo;
-    private ArrayList<Horario> horarios;
+    //private ArrayList<Horario> horarios;
 
 
 
