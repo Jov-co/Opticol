@@ -14,9 +14,10 @@ import java.util.List;
 public class PacienteController {
 
     @Autowired
-    private PacienteService pacienteService;
 
-    //Metodos
+    PacienteService pacienteService;
+     //Metodos
+
 
     //CRUD Pacientes
 
@@ -27,8 +28,8 @@ public class PacienteController {
     }
     //Agregar un Paciente
     @PostMapping("/pacientes")
-    public ResponseEntity<Object> create (@RequestBody Pacientes paciente, @RequestHeader HttpHeaders headers){
-         return pacienteService.guardar(paciente,headers);
+    public ResponseEntity<Object> create (@RequestBody Pacientes paciente){
+         return pacienteService.guardar(paciente);
     }
     //Buscar Paciente por id
     @GetMapping("/pacientes/{id}")

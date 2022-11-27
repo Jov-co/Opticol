@@ -11,7 +11,7 @@ import java.util.List;
 public interface PacienteService  {
 
     public List<Pacientes> listar();
-    public ResponseEntity<Object> guardar (Pacientes paciente, HttpHeaders headers);
+    public ResponseEntity<Object> guardar (Pacientes paciente);
 
     public ResponseEntity<Pacientes> buscarPorId (String id);
 

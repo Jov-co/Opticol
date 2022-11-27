@@ -30,7 +30,8 @@ public class PacienteServiceImpl implements PacienteService {
     //Agregar paciente nuevo
     @Override
     @Transactional(readOnly = false)
-    public ResponseEntity<Object> guardar (Pacientes paciente, HttpHeaders headers){
+
+    public ResponseEntity<Object> guardar (Pacientes paciente){
         if(paciente.getId()!=null) {
             return ResponseEntity.badRequest().build();
         }
