@@ -1,9 +1,10 @@
 package com.MinTic.Opticol.Services;
 
-import com.MinTic.Opticol.Entities.Citas;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import com.MinTic.Opticol.models.Citas;
 
 import java.util.List;
 
@@ -14,11 +15,14 @@ import java.util.List;
 
         public ResponseEntity<Object> guardar (Citas cita, HttpHeaders headers);
 
-      //  public ResponseEntity<Citas> buscarPorId (String id);
+        public ResponseEntity<Citas> buscarPorId (String id);
 
-        //public ResponseEntity<Citas> modificar(Citas cita, HttpHeaders headers);
-       // public boolean existsById (String id);
+        public ResponseEntity<Citas> modificar(Citas cita, HttpHeaders headers);
+        public boolean existsById (String id);
 
-       // public ResponseEntity<Citas>eliminar(String id);
+       public ResponseEntity<Citas>eliminar(String id);
+
+
+
     }
 

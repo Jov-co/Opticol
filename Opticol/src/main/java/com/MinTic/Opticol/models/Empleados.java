@@ -1,4 +1,4 @@
-package com.MinTic.Opticol.Entities;
+package com.MinTic.Opticol.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

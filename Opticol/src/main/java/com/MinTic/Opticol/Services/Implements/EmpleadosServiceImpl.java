@@ -1,8 +1,9 @@
 package com.MinTic.Opticol.Services.Implements;
 
-import com.MinTic.Opticol.Entities.Empleados;
 import com.MinTic.Opticol.Repository.EmpleadosRepository;
 import com.MinTic.Opticol.Services.EmpleadosService;
+import com.MinTic.Opticol.models.Empleados;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

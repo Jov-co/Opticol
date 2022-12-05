@@ -1,9 +1,10 @@
 package com.MinTic.Opticol.Services;
 
-import com.MinTic.Opticol.Entities.Pacientes;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import com.MinTic.Opticol.models.Pacientes;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
 public interface PacienteService  {
 
     public List<Pacientes> listar();
-    public ResponseEntity<Object> guardar (Pacientes paciente);
+    public ResponseEntity<Object> guardar (Pacientes paciente,  HttpHeaders headers);
 
     public ResponseEntity<Pacientes> buscarPorId (String id);
 
