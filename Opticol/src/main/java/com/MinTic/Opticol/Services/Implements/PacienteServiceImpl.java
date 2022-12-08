@@ -1,6 +1,5 @@
 package com.MinTic.Opticol.Services.Implements;
 
-import com.MinTic.Opticol.Entities.Pacientes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.MinTic.Opticol.Repository.PacientesRepository;
 import com.MinTic.Opticol.Services.PacienteService;
+import com.MinTic.Opticol.models.Pacientes;
+
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -30,8 +31,7 @@ public class PacienteServiceImpl implements PacienteService {
     //Agregar paciente nuevo
     @Override
     @Transactional(readOnly = false)
-
-    public ResponseEntity<Object> guardar (Pacientes paciente){
+    public ResponseEntity<Object> guardar (Pacientes paciente , HttpHeaders headers){
         if(paciente.getId()!=null) {
             return ResponseEntity.badRequest().build();
         }

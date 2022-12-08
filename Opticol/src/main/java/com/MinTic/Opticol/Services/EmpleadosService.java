@@ -1,10 +1,11 @@
 package com.MinTic.Opticol.Services;
 
 
-import com.MinTic.Opticol.Entities.Empleados;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import com.MinTic.Opticol.models.Empleados;
 
 import java.util.List;
 

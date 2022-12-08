@@ -1,18 +1,16 @@
-package com.MinTic.Opticol.Entities;
+package com.MinTic.Opticol.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
     @Document(collection = "citas")
+    @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    @Setter
     @Getter
+    @Setter
     public class Citas {
 
         //Atributos
@@ -20,10 +18,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
         private String id;
         private String fecha;
         private String hora;
+        private String nombre;
+        private String telefono;
         private String tipoCita;
         private String estadoCita;
-        private Pacientes paciente;
-        private Object profesionalMedico;
+
+        //private Object profesionalMedico;
 
     }
 

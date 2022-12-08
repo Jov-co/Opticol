@@ -1,7 +1,9 @@
 package com.MinTic.Opticol.Controllers;
 
-import com.MinTic.Opticol.Entities.Citas;
 import com.MinTic.Opticol.Services.CitaService;
+import com.MinTic.Opticol.models.Citas;
+
+import com.MinTic.Opticol.models.Pacientes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +13,7 @@ import java.util.List;
 
     @RestController
     @RequestMapping("/api")
+    @CrossOrigin(origins = "http://localhost:4200")
     public  class CitaController {
 
 
@@ -30,6 +33,23 @@ import java.util.List;
             return citaService.guardar(cita, headers);
         }
 
+        //Buscar cita por id
+        @GetMapping("/citas/{id}")
+        public ResponseEntity<Citas> findById(@PathVariable String id){
+            return citaService.buscarPorId(id);
+        }
+
+        //Modificar Paciente por id
+        @PutMapping("/citas")
+        public ResponseEntity<Citas> update(@RequestBody Citas cita, @RequestHeader HttpHeaders headers){
+            return citaService.modificar(cita, headers);
+        }
+
+        //Eliminar por id
+        @DeleteMapping("/citas/{id}")
+        public ResponseEntity<Citas> delete(@PathVariable String id){
+            return citaService.eliminar(id);
+        }
 
 
 
